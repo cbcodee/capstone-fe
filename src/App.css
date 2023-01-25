@@ -13,14 +13,17 @@
   }
 }
 
+/* working on grid--> research how I can get the tasks to all fit in one rectangle */
 .App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
+  background-color: #828ea7;
+  min-height:15px;
+  width: 150px;
+  display: grid;
+  grid-column: auto;
+  /* flex-direction: column; */
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  font-size: calc(2px + 1vmin);
   color: white;
 }
 
