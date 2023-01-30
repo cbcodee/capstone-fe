@@ -1,0 +1,24 @@
+.new__task__fields {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 300px;
+    row-gap: 2px;
+}
+
+.new__task__fields__label {
+    font-size: medium;
+}
+
+
+.invalid__form__input {
+    background-color:pink;
+}
+
+.submit__button {
+    background-color:rgb(103, 138, 171);
+    font-size: small;
+    font-weight: bold;
+    color: white;
+}

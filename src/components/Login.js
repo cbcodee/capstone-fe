@@ -1,7 +1,7 @@
 import React from "react";
 
-const Timer = () => {
+const Login = () => {
   return <div>hi!</div>;
 };
 
-export default Timer;
+export default Login;

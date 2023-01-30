@@ -2,9 +2,9 @@ main ul.tasks__list {
     /* width: 75px; */
     margin: 1px;
     width: 150px;
-    display: grid;
-    grid-row: auto / span 2;
-  /* flex-direction: column; */
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
 }
