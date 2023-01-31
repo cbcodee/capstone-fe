@@ -1,16 +1,30 @@
 import React, { useState } from "react";
 
-const Background = () => {
-  const [backgroundImage, setBackground] = useState(0);
-
-  const updateBackground = () => {
-    setBackground(backgroundImage);
-  };
+const Background = (props) => {
   return (
     <section>
-      <button onClick={updateBackground}>add task</button>
+      <button
+        className="coffee"
+        onClick={() => props.updateBackground("coffee")}
+      >
+        coffee
+      </button>
+      <button
+        className="library"
+        onClick={() => props.updateBackground("library")}
+      >
+        library
+      </button>
+      <button
+        className="nature"
+        onClick={() => props.updateBackground("nature")}
+      >
+        nature
+      </button>
     </section>
   );
 };
+
+// create image buttons-> hard code
 
 export default Background;

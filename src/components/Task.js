@@ -16,12 +16,17 @@ const Task = (props) => {
       <ul>
         <li className="tasks__item">
           <button
-            // className={`tasks__item__toggle ${null}`}
+            className={"tasks__item__toggle"}
             onClick={() => props.onTaskComplete(props.id)}
           >
             {props.title}
           </button>
-          <button onClick={() => props.onTaskDelete(props.id)}>x</button>
+          <button
+            className="tasks__item__remove button"
+            onClick={() => props.onTaskDelete(props.id)}
+          >
+            x
+          </button>
         </li>
       </ul>
     </div>

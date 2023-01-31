@@ -3,7 +3,7 @@
 }
 
 
-/* .Task-header {
+.Task-container {
   align-self: center;
   background-color: #fff;
   background-image: none;
@@ -32,7 +32,7 @@
   user-select: none;
   -webkit-user-select: none;
   touch-action: manipulation;
-} */
+}
 
 .coffee-shop-button {
   align-self: center;
