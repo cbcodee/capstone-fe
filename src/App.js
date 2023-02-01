@@ -36,8 +36,8 @@ const taskDataList = [
 
 const kBaseUrl = "http://localhost:5000";
 
-const convertFromApi = (apiTask) => {
-  const { id, is_complete: isComplete, title } = apiTask;
+const convertFromApi = (task) => {
+  const { id, is_complete: isComplete, title } = task;
 
   return { id, isComplete, title };
 };
@@ -54,24 +54,23 @@ const getAllTasksAsync = () => {
 };
 
 const updateTaskAsync = (id, markComplete) => {
-  const endpoint = markComplete ? "mark_complete" : "mark_incomplete";
+  const endpoint = markComplete ? "mark-complete" : "mark-incomplete";
 
   return axios
     .patch(`${kBaseUrl}/tasks/${id}/${endpoint}`)
     .then((response) => {
-      return convertFromApi(response.data.task);
+      return convertFromApi(response.data);
     })
     .catch((error) => {
       console.log(error);
+      throw new Error(`error updating task ${id}`);
     });
 };
 
 const deleteTaskAsync = (id) => {
   return axios
     .delete(`${kBaseUrl}/tasks/${id}`)
-    .then((response) => {
-      return convertFromApi(response.data);
-    })
+
     .catch((error) => {
       console.log(error);
     });
@@ -109,30 +108,65 @@ const App = () => {
   //   );
   // };
 
-  const toggleIsComplete = (id) => {
-    return updateTaskAsync(id).then((taskResult) => {
-      setTaskData((taskData) =>
-        taskData.map((task) => {
-          if (task.id === taskResult.id) {
-            return taskResult;
-          } else {
-            return task;
-          }
-        })
-      );
-    });
+  // const toggleIsComplete = (id) => {
+  //   return updateTaskAsync(id).then((taskResult) => {
+  //     setTaskData((taskData) =>
+  //       taskData.map((task) => {
+  //         if (task.id === taskResult.id) {
+  //           return taskResult;
+  //         } else {
+  //           return task;
+  //         }
+  //       })
+  //     );
+  //   });
+  // };
+
+  const updateTask = (id) => {
+    const task = taskData.find((task) => task.id === id);
+    if (!task) {
+      return Promise.resolve();
+    }
+    return updateTaskAsync(id, !task.isComplete)
+      .then((newTask) => {
+        setTaskData((oldTasks) => {
+          return oldTasks.map((task) => {
+            if (task.id === newTask.id) {
+              return newTask;
+            } else {
+              return task;
+            }
+          });
+        });
+      })
+      .catch((err) => {
+        console.log(err.message);
+      });
   };
 
-  const toggleDelete = (id) => {
-    return deleteTaskAsync(id).then((taskResult) => {
-      setTaskData((taskData) =>
-        taskData.filter((task) => {
-          return task.id !== taskResult.id;
-        })
-      );
-    });
-    // const newTasks = taskData.filter((task) => task.id !== id);
-    // setTaskData(newTasks);
+  // const toggleDelete = (id) => {
+  //   return deleteTaskAsync(id).then((taskResult) => {
+  //     setTaskData((taskData) =>
+  //       taskData.filter((task) => {
+  //         return task.id !== taskResult.id;
+  //       })
+  //     );
+  //   });
+  //   // const newTasks = taskData.filter((task) => task.id !== id);
+  //   // setTaskData(newTasks);
+  // };
+
+  const deleteTask = (id) => {
+    return deleteTaskAsync(id)
+      .then(() => {
+        setTaskData((oldTasks) => {
+          // return the new value for the tasks state
+          return oldTasks.filter((task) => task.id !== id);
+        });
+      })
+      .catch((err) => {
+        console.log(err.message);
+      });
   };
 
   const updateBackground = (image) => {
@@ -146,8 +180,8 @@ const App = () => {
         <h2>Tasks</h2>
         <TaskList
           taskData={taskData}
-          onTaskComplete={toggleIsComplete}
-          onTaskDelete={toggleDelete}
+          onToggleCompleteCallback={updateTask}
+          onDeleteCallback={deleteTask}
         />
       </header>
       <Timer Background={backgroundImage} />
