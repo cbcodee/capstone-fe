@@ -1,69 +1,89 @@
 import React, { useState } from "react";
-import PropTypes from "prop-types";
 import "./NewTaskForm.css";
 
-const NewTaskForm = ({ addTaskCallback }) => {
-  const [taskData, setTaskData] = useState({
-    title: "",
-  });
+const NewTaskForm = ({ handleTaskSubmit }) => {
+  const [taskTitle, setTaskTitle] = useState("");
 
-  const submitTaskData = (e) => {
-    e.preventDefault();
-
-    addTaskCallback(taskData);
-    setTaskData({ title: "" });
+  const handleChange = (event) => {
+    setTaskTitle(event.target.value);
   };
 
-  const handleChange = (e) => {
-    setTaskData({ ...taskData, [e.target.name]: e.target.value });
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    handleTaskSubmit(taskTitle);
+    setTaskTitle("");
   };
-
   return (
-    <form onSubmit={submitTaskData}>
-      <section>
-        <div className="new__task__fields">
-          <label htmlFor="name">Add new task</label>
-          <input
-            name="title"
-            id="title"
-            value={taskData.title}
-            onChange={handleChange}
-            className={
-              taskData.title.length === 0 ? "invalid__form__input" : ""
-            }
-          />
-          {/* <label htmlFor="name">Your Name</label>
-          <input
-          name="owner"
-          id="owner"
-          value={taskData.owner}
+    <form onSubmit={handleSubmit}>
+      <div>
+        <label htmlFor="title">Add a Task: </label>
+        <input
+          type="text"
+          id="title"
+          title="title"
+          value={taskTitle}
           onChange={handleChange}
-          className={taskData.owner.length === 0 ? "invalid__form__input" : ""}
-          />
-          <p className="required">* required</p>
-          <p>
-            Preview: {taskData.title} - {taskData.owner}
-           </p> */}
-          <button
-            className="submit__button"
-            type="submit"
-            disabled={
-              taskData.title.length === 0 || taskData.owner.length === 0
-            }
-          >
-            Submit
-          </button>
-        </div>
-      </section>
+        />
+      </div>
+      <div>
+        <input type="submit" value="add a task" />
+      </div>
     </form>
   );
 };
 
-NewTaskForm.propTypes = {
-  addTaskCallback: PropTypes.func.isRequired,
-};
-
 export default NewTaskForm;
+
+// const NewTaskForm = ({ addTaskCallback }) => {
+//   const [taskData, setTaskData] = useState({
+//     title: "",
+//   });
+
+//   const submitTaskData = (e) => {
+//     e.preventDefault();
+
+//     addTaskCallback(taskData);
+//     setTaskData({ title: "" });
+//   };
+
+//   const handleChange = (e) => {
+//     setTaskData({ ...taskData, [e.target.name]: e.target.value });
+//   };
+
+//   return (
+//     <form onSubmit={submitTaskData}>
+//       <section>
+//         <div className="new__task__fields">
+//           <label htmlFor="name">Add new task</label>
+//           <input
+//             name="title"
+//             id="title"
+//             value={taskData.title}
+//             onChange={handleChange}
+//             className={
+//               taskData.title.length === 0 ? "invalid__form__input" : ""
+//             }
+//           />
+//           <button
+//             className="submit__button"
+//             type="submit"
+//             disabled={
+//               taskData.title.length === 0 || taskData.owner.length === 0
+//             }
+//           >
+//             Submit
+//           </button>
+//         </div>
+//       </section>
+//     </form>
+//   );
+// };
+
+// NewTaskForm.propTypes = {
+//   addTaskCallback: PropTypes.func.isRequired,
+// };
+
+// export default NewTaskForm;
 
 // const kDefaultFormState = {
 //   title: "",

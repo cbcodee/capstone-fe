@@ -1,5 +1,5 @@
 .App {
-  text-align: center;
+  text-align:center;
 }
 
 
@@ -34,7 +34,7 @@
   touch-action: manipulation;
 }
 
-.coffee-shop-button {
+.back-buttons {
   align-self: center;
   background-color: #fff;
   background-image: none;
@@ -65,14 +65,14 @@
   touch-action: manipulation;
 }
 
-.coffee-shop-button:hover {
+/* .back-buttons:hover {
   box-shadow: rgba(0, 0, 0, .3) 2px 8px 8px -5px;
   transform: translate3d(0, 2px, 0);
-}
+} */
 
-.coffee-shop-button:focus {
+/* .back-buttons:focus {
   box-shadow: rgba(0, 0, 0, .3) 2px 8px 4px -6px;
-}
+} */
 .library-button {
   align-self: center;
   background-color: #fff;

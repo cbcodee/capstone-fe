@@ -7,9 +7,7 @@ import { useState } from "react";
 import { useEffect } from "react";
 import axios from "axios";
 import Background from "./components/Backgrounds";
-
-// import Backgrounds from "./components/Backgrounds";
-// import TaskList from "./components/TaskList.js";
+import NewTaskForm from "./components/NewTaskForm";
 
 const taskDataList = [
   {
@@ -76,6 +74,20 @@ const deleteTaskAsync = (id) => {
     });
 };
 
+const addNewTaskAsync = (title) => {
+  const currentTaskData = {
+    title,
+  };
+  return axios
+    .post(`${kBaseUrl}/tasks`, currentTaskData)
+    .then((response) => {
+      return convertFromApi(response.data);
+    })
+    .catch((error) => {
+      console.log(error);
+    });
+};
+
 const App = () => {
   const [taskData, setTaskData] = useState([]);
   const [backgroundImage, setBackground] = useState(0);
@@ -95,32 +107,6 @@ const App = () => {
         console.log(err.message);
       });
   };
-
-  // const toggleComplete = (id) => {
-  //   setTaskData((taskData) =>
-  //     taskData.map((task) => {
-  //       if (task.id === id) {
-  //         return { ...task, isComplete: !task.isComplete };
-  //       } else {
-  //         return task;
-  //       }
-  //     })
-  //   );
-  // };
-
-  // const toggleIsComplete = (id) => {
-  //   return updateTaskAsync(id).then((taskResult) => {
-  //     setTaskData((taskData) =>
-  //       taskData.map((task) => {
-  //         if (task.id === taskResult.id) {
-  //           return taskResult;
-  //         } else {
-  //           return task;
-  //         }
-  //       })
-  //     );
-  //   });
-  // };
 
   const updateTask = (id) => {
     const task = taskData.find((task) => task.id === id);
@@ -144,18 +130,6 @@ const App = () => {
       });
   };
 
-  // const toggleDelete = (id) => {
-  //   return deleteTaskAsync(id).then((taskResult) => {
-  //     setTaskData((taskData) =>
-  //       taskData.filter((task) => {
-  //         return task.id !== taskResult.id;
-  //       })
-  //     );
-  //   });
-  //   // const newTasks = taskData.filter((task) => task.id !== id);
-  //   // setTaskData(newTasks);
-  // };
-
   const deleteTask = (id) => {
     return deleteTaskAsync(id)
       .then(() => {
@@ -169,6 +143,14 @@ const App = () => {
       });
   };
 
+  const handleTaskSubmit = (data) => {
+    addNewTaskAsync(data)
+      .then((newTask) => {
+        setTaskData([...taskData, newTask]);
+      })
+      .catch((e) => console.log(e));
+  };
+
   const updateBackground = (image) => {
     setBackground(image);
     console.log(image);
@@ -176,6 +158,9 @@ const App = () => {
 
   return (
     <div className="App">
+      <div className="back-buttons">
+        <Background updateBackground={updateBackground} />
+      </div>
       <header className="Task-container">
         <h2>Tasks</h2>
         <TaskList
@@ -183,10 +168,9 @@ const App = () => {
           onToggleCompleteCallback={updateTask}
           onDeleteCallback={deleteTask}
         />
+        <NewTaskForm handleTaskSubmit={handleTaskSubmit} />
       </header>
       <Timer Background={backgroundImage} />
-      <h2>Backgrounds </h2>
-      <Background updateBackground={updateBackground} />
     </div>
   );
 };

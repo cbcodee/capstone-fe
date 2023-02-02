@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-// import ReactTimeAgo from React
 import "./Timer.css";
 
 const Timer = (props) => {
