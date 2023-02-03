@@ -9,29 +9,6 @@ import axios from "axios";
 import Background from "./components/Backgrounds";
 import NewTaskForm from "./components/NewTaskForm";
 
-const taskDataList = [
-  {
-    id: 1,
-    title: "Read chapter 1",
-    isComplete: true,
-  },
-  {
-    id: 2,
-    title: "Review lesson 2",
-    isComplete: true,
-  },
-  {
-    id: 3,
-    title: "Review lesson 3",
-    isComplete: false,
-  },
-  {
-    id: 4,
-    title: "Review lesson 4",
-    isComplete: false,
-  },
-];
-
 const kBaseUrl = "http://localhost:5000";
 
 const convertFromApi = (task) => {

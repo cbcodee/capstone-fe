@@ -22,13 +22,13 @@
     font-size: 1rem;
     line-height: 23px;
     outline: none;
-    padding: .75rem;
+    /* padding: .75rem; */
     text-decoration: none;
     transition: all 235ms ease-in-out;
-    /* border-bottom-left-radius: 15px 255px;
-    border-bottom-right-radius: 225px 15px;
-    border-top-left-radius: 255px 15px;
-    border-top-right-radius: 15px 225px; */
+    /* border-bottom-left-radius: 455px 455px;
+    border-bottom-right-radius: 455px 455px;
+    border-top-left-radius: 455px 455px;
+    border-top-right-radius: 455px 455px; */
     user-select: none;
     -webkit-user-select: none;
     touch-action: manipulation;
@@ -55,9 +55,9 @@
 .tasks__item__toggle {
     cursor: pointer;
     width: 100%;
-    /* width: 120%; */
     text-align: left;
-    /* padding: 0.85em 2.25em 0.85em 1em; */
+    
+    padding: 0.85em 2.25em 0.85em 1em;
     background-color: rgba(0, 0, 0, 0.05);
     border: 1px solid rgba(0, 0, 0, 0.1);
 }
@@ -65,12 +65,22 @@
 button.tasks__item__remove {
     top: 50%;
     right: 0;
-    height: auto;
+    /* width: 80px; */
+    border-width: 1px;
+    border-color: rgb(1, 1, 2);
+    /* height: auto; */
     /* height: 100%; */
     /* transform: translateY(-50%); */
     /* padding: 0.85em 2.25em 0.85em 1em; */
-    font-size: 100%;
+    /* border-bottom-left-radius: 455px 455px;
+    border-bottom-right-radius: 455px 455px;
+    border-top-left-radius: 455px 455px;
+    border-top-right-radius: 455px 455px; */
+    font-size: 120%;
+    color: rgb(225, 220, 215);
+    font: Verdana;
     margin: 0;
-    background-color: rgb(159, 77, 77);
+    background-color: #d14a4a;
+    /* background-color: rgb(159, 77, 77); */
 }
 
