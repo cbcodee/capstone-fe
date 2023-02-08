@@ -38,7 +38,7 @@
 .tasks__item {
     display: flex;
     align-items: top;
-    background-color: rgb(255, 255, 249);
+    background-color:#E5E4CC;
 }
 
 .tasks__item__toggle:hover {

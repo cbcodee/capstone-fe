@@ -1,10 +1,13 @@
+import SPOTIFY_CLIENT_ID from "";
+import SPOTIFY_CLIENT_SECRET from "";
+
 var express = require("express"); // Express web server framework
 // var request = require('request'); // "Request" library
 // var cors = require('cors');
 var querystring = require("querystring");
 // var cookieParser = require('cookie-parser');
-var client_id = "CLIENT_ID";
-// var client_secret = 'CLIENT_SECRET';
+var client_id = SPOTIFY_CLIENT_ID;
+var client_secret = SPOTIFY_CLIENT_SECRET;
 var redirect_uri = "http://localhost:5000/callback";
 var scopes = "streaming";
 

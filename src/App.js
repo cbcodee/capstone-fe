@@ -68,6 +68,7 @@ const addNewTaskAsync = (title) => {
 const App = () => {
   const [taskData, setTaskData] = useState([]);
   const [backgroundImage, setBackground] = useState(0);
+  // const [mode, setMode] = useState(modes.pomodoro);
 
   useEffect(() => {
     // data fetching code
@@ -133,11 +134,16 @@ const App = () => {
     console.log(image);
   };
 
+  // const updateTimer = (mode) => {
+  //   setMode(mode);
+  // };
+
   return (
     <div className="App">
       <div className="back-buttons">
         <Background updateBackground={updateBackground} />
       </div>
+      <h1>Spotify React</h1>
       <header className="Task-container">
         <h2>Tasks</h2>
         <TaskList
@@ -147,6 +153,7 @@ const App = () => {
         />
         <NewTaskForm handleTaskSubmit={handleTaskSubmit} />
       </header>
+
       <Timer Background={backgroundImage} />
     </div>
   );

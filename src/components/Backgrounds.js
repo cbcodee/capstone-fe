@@ -21,6 +21,9 @@ const Background = (props) => {
       >
         nature
       </button>
+      <button className="none" onClick={() => props.updateBackground("none")}>
+        none
+      </button>
     </section>
   );
 };
