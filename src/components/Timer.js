@@ -59,7 +59,6 @@ const Timer = (props) => {
       <button
         className="pomo-timer-button"
         name="switch"
-        appearance="success"
         options={controls.options}
         value={mode.code}
         onChange={(value) => setMode(modes[value])}
@@ -73,7 +72,7 @@ const Timer = (props) => {
       <button
         className="short-break-button"
         name="switch"
-        appearance="success"
+        // appearance="success"
         options={controls.options}
         value={mode.code}
         onChange={(value) => setMode(modes[value])}
@@ -87,7 +86,6 @@ const Timer = (props) => {
       <button
         className="long-break-button"
         name="switch"
-        appearance="success"
         options={controls.options}
         value={mode.code}
         onChange={(value) => setMode(modes[value])}
@@ -106,7 +104,6 @@ const Timer = (props) => {
         className="start-button"
         height={40}
         appearance="primary"
-        intent="success"
         onClick={() => {
           if (pause) {
             setPause(false);
@@ -123,7 +120,6 @@ const Timer = (props) => {
         className="pause-button"
         height={40}
         appearance="primary"
-        intent="danger"
         onClick={() => {
           setPause(true);
         }}

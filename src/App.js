@@ -140,12 +140,13 @@ const App = () => {
 
   return (
     <div className="App">
+      <h1 className="app-name">Timely Focus</h1>
       <div className="back-buttons">
         <Background updateBackground={updateBackground} />
       </div>
       <h1>Spotify React</h1>
       <header className="Task-container">
-        <h2>Tasks</h2>
+        <h2>To-do List</h2>
         <TaskList
           taskData={taskData}
           onToggleCompleteCallback={updateTask}

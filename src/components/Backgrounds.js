@@ -7,7 +7,7 @@ const Background = (props) => {
         className="coffee"
         onClick={() => props.updateBackground("coffee")}
       >
-        coffee
+        coffee shop
       </button>
       <button
         className="library"
@@ -27,7 +27,5 @@ const Background = (props) => {
     </section>
   );
 };
-
-// create image buttons-> hard code
 
 export default Background;

@@ -6,14 +6,12 @@
   flex-wrap: wrap;
   row-gap: 1px;
   column-gap: 2em;
-  background-color: #dedecc;
+  background-color: #efefe4;
   /* background-image: linear-gradient(79deg, #acbe9a, #cad5bc 48%, #d5e2c3); */
 }
 
 
 .Task-container {
-  /* align-self: center; */
-  background-color: #e0e6da; 
   background-image: none;
   background-position: 0 90%;
   background-repeat: repeat no-repeat;
@@ -34,13 +32,14 @@
   padding-top: .10rem; 
   text-decoration: none;
   transition: all 235ms ease-in-out;
-  /* border-bottom-left-radius: 15px 255px;
+  border-bottom-left-radius: 15px 255px;
   border-bottom-right-radius: 225px 15px;
   border-top-left-radius: 255px 15px;
-  border-top-right-radius: 15px 225px; */
+  border-top-right-radius: 15px 225px;
   user-select: none;
   -webkit-user-select: none;
   touch-action: manipulation;
+  margin-left: 30px;
 }
 
 .tasks__list.no-bullet {
@@ -69,13 +68,13 @@
   border-bottom-right-radius: 225px 15px;
   border-top-left-radius: 255px 15px;
   border-top-right-radius: 15px 225px;
+  margin-left: 10px;
 }
 #submitTaskButton {
   /* display:flex;
   flex-direction:row; */
-  background-color: rgb(208, 219, 181);
+  background-color: rgb(205, 225, 156);
   border-color: #3e3e38;
-  /* border-radius: 15px 225px 255px 15px 15px 255px 225px 15px; */
   border-style: solid;
   border-width: 2px;
   box-shadow: rgba(16, 19, 16, 0.2) 15px 28px 25px -18px;
@@ -84,10 +83,8 @@
   cursor: pointer;
   font-family: Neucha, sans-serif;
   font-size: .90rem;
-  line-height: 23px;
   outline: none;
-  /* padding: .35rem; */
-  height: 2rem;
+  height: 24px;
   text-decoration: none;
   transition: all 235ms ease-in-out;
   border-bottom-left-radius: 15px 255px;
@@ -97,6 +94,8 @@
   user-select: none;
   -webkit-user-select: none;
   touch-action: manipulation;
+  margin-left: 3px;
+  justify-content: center;
 }
 
 .back-buttons {
@@ -169,6 +168,7 @@
   user-select: none;
   -webkit-user-select: none;
   touch-action: manipulation;
+  margin-right: 10px;
 }
 
 .coffee:hover {
@@ -211,6 +211,7 @@
   user-select: none;
   -webkit-user-select: none;
   touch-action: manipulation;
+  margin-right: 10px;
 }
 .library:hover {
   box-shadow: rgba(0, 0, 0, .3) 2px 8px 8px -5px;
@@ -251,6 +252,7 @@
   user-select: none;
   -webkit-user-select: none;
   touch-action: manipulation;
+  margin-right: 10px;
 }
 
 .nature:hover {
@@ -292,6 +294,7 @@
   user-select: none;
   -webkit-user-select: none;
   touch-action: manipulation;
+  margin-right: 10px;
 }
 
 .none:hover {
@@ -304,3 +307,20 @@
 }
 
 
+.app-name {
+  background-color: none;
+  /* background-image: linear-gradient(79deg, #dae5b7, #a7b7bd 50%); */
+  /* background-position: 0 90%; */
+  background-repeat: repeat no-repeat;
+  /* background-size: 4px 3px; */
+  border-bottom-left-radius: 15px 255px;
+  border-bottom-right-radius: 225px 15px;
+  border-top-left-radius: 255px 15px;
+  border-top-right-radius: 15px 225px;
+  border-style: dashed;
+  border-color: #010101;
+  padding: 20px;
+  margin-left: 30px;
+  font-family:verdana;
+  color:#141512;
+}

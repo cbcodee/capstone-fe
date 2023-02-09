@@ -26,8 +26,6 @@ const NewTaskForm = ({ handleTaskSubmit }) => {
           value={taskTitle}
           onChange={handleChange}
         />
-      </div>
-      <div>
         <input type="submit" id="submitTaskButton" value="+" />
       </div>
     </form>
