@@ -14,7 +14,12 @@
 
 
 .timer{
-    margin: 10px;
+    margin-left: 50px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     height: 80%;
@@ -27,7 +32,7 @@
     background-position: 0 90%;*/
     background-repeat: repeat no-repeat;
     background-size: 600px 500px; 
-    border-radius: 15px 225px 255px 15px 15px 255px 225px 15px;
+    /* border-radius: 15px 225px 255px 15px 15px 255px 225px 15px; */
     border-style: solid;
     border-width: 2px;
     box-shadow: rgba(79, 121, 77, 0.2) 15px 28px 25px -18px;
@@ -84,7 +89,7 @@
     color: #dcd6c9;
 }
 #none {
-    color: #41403e;
+    color: #d1ccc3;
 }
 
 /* #none {
@@ -94,7 +99,7 @@
 
 .start-button {
     align-self: center;
-    background-color: #0c0c0a;
+    background-color: #889E81;
     background-image: none;
     background-position: 0 90%;
     background-repeat: repeat no-repeat;
@@ -123,6 +128,7 @@
     -webkit-user-select: none;
     touch-action: manipulation;
     margin-right: 10px;
+    margin-left: 50px;
 
 }
 
@@ -138,7 +144,7 @@
 
 .pause-button {
     align-self: center;
-    background-color: #080708;
+    background-color: #889E81;
     background-image: none;
     background-position: 0 90%;
     background-repeat: repeat no-repeat;
@@ -183,7 +189,7 @@
 
 .reset-button {
     align-self: center;
-    background-color: #090b08;
+    background-color: #889E81;
     background-image: none;
     background-position: 0 90%;
     background-repeat: repeat no-repeat;
@@ -272,7 +278,7 @@
     color: #41403e;
     cursor: pointer;
     display: inline-block;
-    font-family: Neucha, sans-serif;
+    font-family: Verdana;
     font-size: 1rem;
     line-height: 23px;
     outline: none;
@@ -286,6 +292,7 @@
     user-select: none;
     -webkit-user-select: none;
     touch-action: manipulation;
+    margin-left: 60px;
     margin-right: 10px;
 }
 
@@ -305,7 +312,7 @@
     color: #41403e;
     cursor: pointer;
     display: inline-block;
-    font-family: Neucha, sans-serif;
+    font-family: Verdana;
     font-size: 1rem;
     line-height: 23px;
     outline: none;
@@ -338,7 +345,7 @@
     color: #41403e;
     cursor: pointer;
     display: inline-block;
-    font-family: Neucha, sans-serif;
+    font-family: Verdana;
     font-size: 1rem;
     line-height: 23px;
     outline: none;
