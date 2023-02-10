@@ -7,8 +7,10 @@ import { useEffect } from "react";
 import axios from "axios";
 import Background from "./components/Backgrounds";
 import NewTaskForm from "./components/NewTaskForm";
-import { loginUrl } from "./components/Spotify";
+import { getTokenFromUrl, loginUrl } from "./components/Spotify";
+import SpotifyWebApi from "spotify-web-api-js";
 
+const spotify = new SpotifyWebApi();
 const kBaseUrl = "http://localhost:5000";
 
 const convertFromApi = (task) => {
@@ -68,6 +70,27 @@ const addNewTaskAsync = (title) => {
 const App = () => {
   const [taskData, setTaskData] = useState([]);
   const [backgroundImage, setBackground] = useState(0);
+  const [spotifyToken, setSpotifyToken] = useState("");
+
+  useEffect(() => {
+    console.log("This is what we derived from the URL: ", getTokenFromUrl());
+    // this is our spotify toker
+    const _spotifyToken = getTokenFromUrl().access_token;
+
+    // we dont want our token in the URI
+    window.location.hash = "";
+    console.log("This is our spotify token: ", _spotifyToken);
+
+    if (_spotifyToken) {
+      setSpotifyToken(_spotifyToken);
+
+      spotify.setAccessToken(_spotifyToken);
+
+      spotify.getMe().then((user) => {
+        console.log("this is you: ", user);
+      });
+    }
+  });
 
   useEffect(() => {
     // data fetching code
