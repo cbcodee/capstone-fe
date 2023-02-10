@@ -43,7 +43,11 @@
     font-size: 100px;
     line-height: 300%;
     outline: none;
-    padding: 100px;
+    /* padding: 100px; */
+    padding-left: 150px;
+    padding-top: 100px;
+    padding-bottom: 100px;
+    padding-right: 150px;
     text-decoration: none;
     transition: all 235ms ease-in-out;
     /* border-bottom-left-radius: 15px 255px;
@@ -53,6 +57,7 @@
     user-select: none;
     -webkit-user-select: none;
     touch-action: manipulation;
+    
 }
 
 /* #root {
@@ -81,7 +86,7 @@
 #library {
     background-image: url('/Users/cristal/Developer/capstone-fe/public/img/library.jpeg');
     color: #dcd6c9;
-    background-size: 500px 500px; 
+    background-size: 600px 500px; 
 }
 
 #nature {
@@ -113,7 +118,7 @@
     color: #eee9e6;
     cursor: pointer;
     display: inline-block;
-    font-family: Neucha, sans-serif;
+    font-family: verdana;
     font-size: 1rem;
     line-height: 23px;
     outline: none;
@@ -158,7 +163,7 @@
     color: #fffdfb;
     cursor: pointer;
     display: inline-block;
-    font-family: Neucha, sans-serif;
+    font-family: verdana;
     font-size: 1rem;
     line-height: 23px;
     outline: none;
@@ -203,7 +208,7 @@
     color: #fffffe;
     cursor: pointer;
     display: inline-block;
-    font-family: Neucha, sans-serif;
+    font-family: verdana;
     font-size: 1rem;
     line-height: 23px;
     outline: none;
@@ -264,7 +269,8 @@
 
 .pomo-timer-button {
     align-self: center;
-    background-color:#E5E4CC;
+    /* background-color:#E5E4CC; */
+    background-color: #889E81;
     background-image: none;
     background-position: 0 90%;
     background-repeat: repeat no-repeat;
@@ -275,7 +281,7 @@
     border-color: #080807;
     box-shadow: rgba(0, 0, 0, .2) 15px 28px 25px -18px;
     box-sizing: border-box;
-    color: #41403e;
+    color: #f9f8f7;
     cursor: pointer;
     display: inline-block;
     font-family: Verdana;
@@ -298,7 +304,7 @@
 
 .short-break-button {
     align-self: center;
-    background-color:#E5E4CC;
+    background-color:#889E81;
     background-image: none;
     background-position: 0 90%;
     background-repeat: repeat no-repeat;
@@ -309,7 +315,7 @@
     border-color: #080807;
     box-shadow: rgba(0, 0, 0, .2) 15px 28px 25px -18px;
     box-sizing: border-box;
-    color: #41403e;
+    color: #fffefc;
     cursor: pointer;
     display: inline-block;
     font-family: Verdana;
@@ -331,7 +337,7 @@
 
 .long-break-button {
     align-self: center;
-    background-color:#E5E4CC;
+    background-color:#889E81;
     background-image: none;
     background-position: 0 90%;
     background-repeat: repeat no-repeat;
@@ -342,7 +348,7 @@
     border-color: #080807;
     box-shadow: rgba(0, 0, 0, .2) 15px 28px 25px -18px;
     box-sizing: border-box;
-    color: #41403e;
+    color: #f9f7f3;
     cursor: pointer;
     display: inline-block;
     font-family: Verdana;

@@ -159,11 +159,12 @@ const App = () => {
   return (
     <div className="App">
       <h1 className="app-name">Timely Focus</h1>
+
       <div className="back-buttons">
         <Background updateBackground={updateBackground} />
       </div>
       <a href={loginUrl} id="signInButton">
-        sign in with spotify!
+        Sign in with spotify!
       </a>
       <header className="Task-container">
         <h2>To-do List</h2>

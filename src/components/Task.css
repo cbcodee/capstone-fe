@@ -81,7 +81,7 @@ button.tasks__item__remove {
     font-size: 120%;
     color: rgb(225, 220, 215);
     font: Verdana;
-    margin-left: 3px;
+    /* margin-left: 3px; */
     background-color: #d14a4a;
     /* background-color: rgb(159, 77, 77); */
     

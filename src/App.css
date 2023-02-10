@@ -150,7 +150,7 @@
   color: #41403e;
   cursor: pointer;
   display: inline-block;
-  font-family: Neucha, sans-serif;
+  font-family: verdana;
   font-size: 1rem;
   line-height: 23px;
   outline: none;
@@ -193,7 +193,7 @@
   color: #41403e;
   cursor: pointer;
   display: inline-block;
-  font-family: Neucha, sans-serif;
+  font-family: verdana;
   font-size: 1rem;
   line-height: 23px;
   outline: none;
@@ -234,7 +234,7 @@
   color: #41403e;
   cursor: pointer;
   display: inline-block;
-  font-family: Neucha, sans-serif;
+  font-family: verdana;
   font-size: 1rem;
   line-height: 23px;
   outline: none;
@@ -276,7 +276,7 @@
   color: #000000;
   cursor: pointer;
   display: inline-block;
-  font-family: Neucha, sans-serif;
+  font-family: verdana;
   font-size: 1rem;
   line-height: 23px;
   outline: none;
@@ -325,7 +325,7 @@
 
 #signInButton {
   align-self: center;
-  background-color: #84e67c;
+  background-color: #7bda72;
   background-image: none;
   background-position: 0 90%;
   background-repeat: repeat no-repeat;
@@ -336,7 +336,7 @@
   border-width: 2px;
   box-shadow: rgba(0, 0, 0, .2) 15px 28px 25px -18px;
   box-sizing: border-box;
-  color: #000000;
+  color: #070a07;
   cursor: pointer;
   display: inline-block;
   font-family: Verdana, Geneva, Tahoma, sans-serif;

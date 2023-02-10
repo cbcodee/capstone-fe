@@ -72,7 +72,6 @@ const Timer = (props) => {
       <button
         className="short-break-button"
         name="switch"
-        // appearance="success"
         options={controls.options}
         value={mode.code}
         onChange={(value) => setMode(modes[value])}
