@@ -1,6 +1,5 @@
 import React from "react";
 import "./App.css";
-import Task from "./components/Task";
 import TaskList from "./components/TaskList";
 import Timer from "./components/Timer";
 import { useState } from "react";
@@ -8,6 +7,7 @@ import { useEffect } from "react";
 import axios from "axios";
 import Background from "./components/Backgrounds";
 import NewTaskForm from "./components/NewTaskForm";
+import { loginUrl } from "./components/Spotify";
 
 const kBaseUrl = "http://localhost:5000";
 
@@ -68,7 +68,6 @@ const addNewTaskAsync = (title) => {
 const App = () => {
   const [taskData, setTaskData] = useState([]);
   const [backgroundImage, setBackground] = useState(0);
-  // const [mode, setMode] = useState(modes.pomodoro);
 
   useEffect(() => {
     // data fetching code
@@ -134,17 +133,15 @@ const App = () => {
     console.log(image);
   };
 
-  // const updateTimer = (mode) => {
-  //   setMode(mode);
-  // };
-
   return (
     <div className="App">
       <h1 className="app-name">Timely Focus</h1>
       <div className="back-buttons">
         <Background updateBackground={updateBackground} />
       </div>
-      <h1>Spotify React</h1>
+      <a href={loginUrl} id="signInButton">
+        sign in with spotify!
+      </a>
       <header className="Task-container">
         <h2>To-do List</h2>
         <TaskList

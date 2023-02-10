@@ -1,5 +1,3 @@
-import React, { useState } from "react";
-
 const Background = (props) => {
   return (
     <section>
