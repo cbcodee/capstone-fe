@@ -14,6 +14,13 @@ const Background = (props) => {
         library
       </button>
       <button
+        className="fireplace"
+        onClick={() => props.updateBackground("fireplace")}
+      >
+        fireplace
+      </button>
+
+      <button
         className="nature"
         onClick={() => props.updateBackground("nature")}
       >

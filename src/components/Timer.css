@@ -89,6 +89,13 @@
     background-size: 600px 500px; 
 }
 
+#fireplace {
+    background-image: url('/Users/cristal/Developer/capstone-fe/public/img/fire.jpeg');
+    color: #dcd6c9;
+    background-size: 600px 500px; 
+}
+
+
 #nature {
     background-image: url('/Users/cristal/Developer/capstone-fe/public/img/nature1.jpeg');
     color: #dcd6c9;

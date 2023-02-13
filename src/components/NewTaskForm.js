@@ -16,13 +16,14 @@ const NewTaskForm = ({ handleTaskSubmit }) => {
   return (
     <form onSubmit={handleSubmit}>
       <div>
-        <label className="add-task" htmlFor="title" placeholder="add a task">
+        <label className="add-task" htmlFor="title">
           Add a Task:
         </label>
         <input
           type="text"
           id="title"
           title="task"
+          placeholder="Task"
           value={taskTitle}
           onChange={handleChange}
         />
