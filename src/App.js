@@ -7,10 +7,18 @@ import { useEffect } from "react";
 import axios from "axios";
 import Background from "./components/Backgrounds";
 import NewTaskForm from "./components/NewTaskForm";
-import { getTokenFromUrl, loginUrl } from "./components/Spotify";
+
+import { getTokenFromUrl } from "./components/Spotify";
+
+import Login from "./components/Login";
+import Player from "./components/Player";
 import SpotifyWebApi from "spotify-web-api-js";
+import { useDataLayerValue } from "./components/DataLayer";
+
+// import WebPlayback from "./components/Webplayback";
 
 const spotify = new SpotifyWebApi();
+
 const kBaseUrl = "http://localhost:5000";
 
 const convertFromApi = (task) => {
@@ -70,27 +78,35 @@ const addNewTaskAsync = (title) => {
 const App = () => {
   const [taskData, setTaskData] = useState([]);
   const [backgroundImage, setBackground] = useState(0);
-  const [spotifyToken, setSpotifyToken] = useState("");
+  // const [spotifyToken, setSpotifyToken] = useState("");
+
+  const [{ token }, dispatch] = useDataLayerValue();
 
   useEffect(() => {
-    console.log("This is what we derived from the URL: ", getTokenFromUrl());
-    // this is our spotify toker
-    const _spotifyToken = getTokenFromUrl().access_token;
-
-    // we dont want our token in the URI
+    const hash = getTokenFromUrl();
     window.location.hash = "";
-    console.log("This is our spotify token: ", _spotifyToken);
-
-    if (_spotifyToken) {
-      setSpotifyToken(_spotifyToken);
-
-      spotify.setAccessToken(_spotifyToken);
-
+    const tempToken = hash.access_token;
+    if (tempToken) {
+      dispatch({
+        type: "SET_TOKEN",
+        token: tempToken,
+      });
+      spotify.setAccessToken(tempToken);
       spotify.getMe().then((user) => {
-        console.log("this is you: ", user);
+        console.log("person ", user);
+        dispatch({
+          type: "SET_USER",
+          user: user,
+        });
+      });
+      spotify.getUserPlaylists().then((playlists) => {
+        dispatch({
+          type: "SET_PLAYLISTS",
+          playlists: playlists,
+        });
       });
     }
-  });
+  }, [dispatch]);
 
   useEffect(() => {
     // data fetching code
@@ -163,9 +179,10 @@ const App = () => {
       <div className="back-buttons">
         <Background updateBackground={updateBackground} />
       </div>
-      <a href={loginUrl} id="signInButton">
+      {/* <a href={loginUrl} id="signInButton">
         Sign in with spotify!
-      </a>
+      </a> */}
+      <div>{token ? <Player /> : <Login />}</div>
       <header className="Task-container">
         <h2>To-do List</h2>
         <TaskList
@@ -182,3 +199,7 @@ const App = () => {
 };
 
 export default App;
+
+// <script>
+//           window.onSpotifyWebPlaybackSDKReady={accessSpotifyToken}
+//         </script>

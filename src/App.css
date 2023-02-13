@@ -42,6 +42,7 @@
   touch-action: manipulation;
   margin-left: 80px;
   margin-right: 70px;
+  margin-top: 5px;
 }
 
 .tasks__list.no-bullet {
@@ -131,7 +132,7 @@
   user-select: none;
   -webkit-user-select: none;
   touch-action: manipulation;
-  margin-left: 130px;
+  margin-left: 170px;
 }
 
 .coffee {
@@ -319,6 +320,7 @@
   margin-left: 80px;
   margin-right: 50px;
   margin-bottom: 20px;
+  margin-top: 5px;
   font-family:verdana;
   color:#d0d9b5;
 }
@@ -353,7 +355,7 @@
   user-select: none;
   -webkit-user-select: none;
   touch-action: manipulation;
-  margin-left: 30px;
+  margin-left: 50px;
 }
 
 #signInButton:hover {
