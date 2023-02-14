@@ -25,13 +25,13 @@
     height: 80%;
     font-weight: bold;
     font-family: ui-serif;
-    /* background-image: url(public/img/coffee-1.jpeg); */
+    
     align-self: center;
-    /* background-color: #fff; */
-    /* background-image: none;
-    background-position: 0 90%;*/
-    background-repeat: repeat no-repeat;
-    background-size: 600px 500px; 
+    background-repeat: no-repeat;
+    /* background-size: 600px 500px;  */
+    background-size: cover;
+    
+    
     /* border-radius: 15px 225px 255px 15px 15px 255px 225px 15px; */
     border-style: solid;
     border-width: 2px;
@@ -57,12 +57,12 @@
     user-select: none;
     -webkit-user-select: none;
     touch-action: manipulation;
+    justify-content: center;
     
 }
 
-/* #root {
-    height: 100%;
-} */
+
+
 
 .pomodoro {
     font-size: 6em;
@@ -86,7 +86,7 @@
 #library {
     background-image: url('/Users/cristal/Developer/capstone-fe/public/img/library.jpeg');
     color: #dcd6c9;
-    background-size: 600px 500px; 
+    /* background-size: 600px 500px;  */
 }
 
 #fireplace {

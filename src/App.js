@@ -172,17 +172,21 @@ const App = () => {
     console.log(image);
   };
 
+  // const timerContainerRef = useRef(null);
+
+  // const toggleFullScreen = () => {
+  //   screenfull.toggle(timerContainerRef.current);
+  // };
+
   return (
     <div className="App">
       <h1 className="app-name">Timely Focus</h1>
-
       <div className="back-buttons">
         <Background updateBackground={updateBackground} />
       </div>
-      {/* <a href={loginUrl} id="signInButton">
-        Sign in with spotify!
-      </a> */}
-      <div>{token ? <Player /> : <Login />}</div>
+
+      <div className="spotify-login">{token ? <Player /> : <Login />}</div>
+
       <header className="Task-container">
         <h2>To-do List</h2>
         <TaskList
@@ -199,7 +203,3 @@ const App = () => {
 };
 
 export default App;
-
-// <script>
-//           window.onSpotifyWebPlaybackSDKReady={accessSpotifyToken}
-//         </script>

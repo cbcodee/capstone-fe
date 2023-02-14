@@ -67,23 +67,16 @@
 button.tasks__item__remove {
     top: 50%;
     right: 0;
-    /* width: 80px; */
+    
     border-width: 1px;
     border-color: rgb(1, 1, 2);
-    /* height: auto; */
-    /* height: 100%; */
-    /* transform: translateY(-50%); */
-    /* padding: 0.85em 2.25em 0.85em 1em; */
-    /* border-bottom-left-radius: 200%;
-    border-bottom-right-radius: 300%;
-    border-top-left-radius: 300%;
-    border-top-right-radius: 200%; */
+    
     font-size: 120%;
     color: rgb(225, 220, 215);
     font: Verdana;
-    /* margin-left: 3px; */
+    
     background-color: #d14a4a;
-    /* background-color: rgb(159, 77, 77); */
+    
     
 }
 

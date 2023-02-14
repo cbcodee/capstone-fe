@@ -28,6 +28,14 @@ const Timer = (props) => {
   const [pause, setPause] = useState(false);
   const [standby, setStandby] = useState(true);
 
+  const [goFull, setGoFull] = useState(false);
+
+  useEffect(() => {
+    console.log("full clicked");
+    const e = document.getElementById(props.Background);
+    e?.requestFullscreen();
+  }, [goFull]);
+
   const controls = {
     options: [
       { label: "Pomodoro", value: "pomodoro" },
@@ -55,7 +63,7 @@ const Timer = (props) => {
   }, [mode, pause, date, fixedDate]);
 
   return (
-    <div className="main-container">
+    <div className="entire-timer-with-buttons">
       <button
         className="pomo-timer-button"
         name="switch"
@@ -64,7 +72,7 @@ const Timer = (props) => {
         onChange={(value) => setMode(modes[value])}
         onClick={() => {
           setMode(modes.pomodoro);
-          console.log("pomodooro button clicked");
+          console.log("pomodoro button clicked");
         }}
       >
         Pomodoro
@@ -97,7 +105,13 @@ const Timer = (props) => {
       </button>
 
       <div className="timer" id={props.Background}>
-        <TimerClock standby={standby} mode={mode} pause={pause} />
+        <div
+          onClick={(e) => {
+            setGoFull(!goFull);
+          }}
+        >
+          <TimerClock standby={standby} mode={mode} pause={pause} />
+        </div>
       </div>
       <button
         className="start-button"

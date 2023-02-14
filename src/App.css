@@ -7,6 +7,7 @@
   row-gap: 1px;
   column-gap: 2em;
   background-color: #48433a;
+  
   /* background-image: linear-gradient(79deg, #182011, #cad5bc 48%, #c3d6e2, rgb(143, 159, 193)); */
 }
 
@@ -411,3 +412,9 @@
 #signInButton:focus {
   box-shadow: rgba(0, 0, 0, .3) 2px 8px 4px -6px;
 }
+
+.spotify-login {
+display: flex;
+flex-wrap: nowrap;
+}
+
