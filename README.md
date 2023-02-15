@@ -1,70 +1,66 @@
-# Getting Started with Create React App
+# Timely Focus Web App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project came about as a result of my obsession with organization and productivity. Timely Focus is a web app that helps users stay organized and focused using the pomodoro Technique.
 
-## Available Scripts
+## What is the pomodoro Technique?  
 
-In the project directory, you can run:
+The Pomodoro Technique:
+1. Identify a task or tasks that you need to complete.
+2. Set a timer for 25 minutes.
+3. Work on a task with no distractions for 25 min.
+4. When the timer finishes, take a 5-minute break.
+5. Repeat the process 3 more times (4 total).
+6. Take a longer 15-minute break and start again.
 
-### `yarn start`
+## Features
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### To-do list
+This is where users can add the tasks they want to get done. The user can post, cross off, and delete a task.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+<img width="360" alt="Screen Shot 2023-02-14 at 4 20 20 PM copy" src="https://user-images.githubusercontent.com/88733854/218898361-05374437-ae8e-49e9-b3e5-73d28b5402d3.png">
 
-### `yarn test`
+### Timer
+The timer feature allows the user to select the pomodoro timer (25 min), the short break timer(5 min), or the long break timer (15 min). The user can start, pause, or reset the timer using the provided buttons. The timer is also able to convert to fullscreen with just one click on the time and can revert back using the esc button.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+<img width="689" alt="Timer" src="https://user-images.githubusercontent.com/88733854/218899398-970a424c-0b33-4b41-b975-ccc2b10975ee.png">
 
-### `yarn build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Background Changes
+The background feature allows the user to customize the background of their timer while they focus. With options such as coffee shop, library, fireplace, nature, or none, the user can pick the background that best fits their current mood.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+<img width="644" alt="background buttons" src="https://user-images.githubusercontent.com/88733854/218899422-456b0484-cfac-4399-b312-100ce37b313e.png">
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `yarn eject`
+### Spotify music player
+The spotify music player allows the user to log into their premium Spotify account while on the website. It is still under construction but it would also allow the user to choose a playlist to play while they work on their tasks. This player give the website authorization to access the users playlists to play tracks.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+<img width="191" alt="Screen Shot 2023-02-14 at 4 20 20 PM" src="https://user-images.githubusercontent.com/88733854/218899444-606073bd-582f-41b3-90f0-c629675d402f.png">
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## Dependencies
+- React js.
+- Python Flask
+- Spotify Api
+- Postgres
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+"react": "^18.2.0", "react-dom": "^18.2.0", "react-full-screen": "^1.1.1", "react-scripts": "5.0.1", "react-spotify-web-playback-sdk": "^3.0.1", "spotify-web-api-js": "^1.5.2",
 
-## Learn More
+## Installation and Setup
+
+Clone this repository. You will need yarn installed globally on your machine.
+
+Installation:
+
+yarn add
+
+To Start Server:
+
+yarn start
+
+The backend is not currently deployed but uses localhost:5000
+
+To Visit App on your platform : localhost:3000
 
 You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
 To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
